@@ -75,7 +75,7 @@ def get_video_range(category_id, start, end):
                                       start=max(1, start - VIDEOS_PER_PAGE - 1),
                                       end=start - 1)}
 
-    if soup.find('button', attrs={"data-role": "load-more-button"}):
+    if soup.find('a', attrs={"data-role": "load-more-button"}):
         yield {'label': "Next",
                'path': plugin.url_for('show_video_range', category_id=category_id,
                                       start=end + 1, end=end + 1 + VIDEOS_PER_PAGE)}

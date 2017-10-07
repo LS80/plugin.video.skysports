@@ -2,7 +2,7 @@
 <addon id="plugin.video.skysports" name="Sky Sports Video" version="0.2.0" provider-name="Leopold">
   <requires>
     <import addon="xbmc.python" version="2.1.0"/>
-    <import addon="script.module.xbmcswift2" version="2.4.0" optional="false"/>
+    <import addon="script.module.kodiswift" version="0.0.8" optional="false"/>
     <import addon="script.module.beautifulsoup4" version="4.3.1" optional="false"/>
     <import addon="script.module.requests" version="2.3.0" optional="false"/>
   </requires>

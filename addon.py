@@ -23,7 +23,7 @@ import re
 from urlparse import urlparse, urlunparse, urljoin
 from HTMLParser import HTMLParser
 
-from xbmcswift2 import Plugin, xbmc
+from kodiswift import Plugin, xbmc
 from bs4 import BeautifulSoup
 import requests
 

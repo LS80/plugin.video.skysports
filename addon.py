@@ -95,17 +95,17 @@ def get_category_videos(path):
 
 
 def get_videos(soup):
-    for media in soup('a', {'class': 'polaris-tile__button', 'data-role': None}):
-        link = media.find_previous('a', 'polaris-tile__heading-link')
-        thumbnail = media.find_previous('img', 'polaris-tile__media')['data-src']
-
+    for item in soup('div', {'class': 'polaris-tile-grid__item'}):
+        thumbnail = item.find('div', 'polaris-tile__media-wrap').img['data-src']
         thumbnail_large = thumbnail.replace('384x216', '768x432')
+
+        heading = item.find('a', 'polaris-tile__heading-link')
 
         m = re.search('/([\w-]+).jpg', thumbnail)
         if m:
             video_id = m.group(1)
             if len(video_id) == 32:
-                title = link.get_text().strip()
+                title = heading.get_text().strip()
                 yield video_item(video_id, title, thumbnail_large)
 
 
